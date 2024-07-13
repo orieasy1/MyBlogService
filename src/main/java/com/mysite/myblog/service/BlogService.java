@@ -1,10 +1,12 @@
 package com.mysite.myblog.service;
 
-import com.mysite.myblogsite.domain.Article;
-import com.mysite.myblogsite.dto.AddArticleRequest;
-import com.mysite.myblogsite.repository.BlogRepository;
+import com.mysite.myblog.domain.Article;
+import com.mysite.myblog.dto.AddArticleRequest;
+import com.mysite.myblog.repository.BlogRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @RequiredArgsConstructor
 @Service
@@ -13,5 +15,9 @@ public class BlogService {
 
     public Article save(AddArticleRequest request) {
         return blogRepository.save(request.toEntity());
+    }
+
+    public List<Article> findAll() {
+        return blogRepository.findAll();
     }
 }

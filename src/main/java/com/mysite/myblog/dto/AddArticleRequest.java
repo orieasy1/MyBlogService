@@ -1,6 +1,6 @@
 package com.mysite.myblog.dto;
 
-import com.mysite.myblogsite.domain.Article;
+import com.mysite.myblog.domain.Article;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
