@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>투혼투지</title>
+</head>
+<body>
+<h1>롯데 자이언츠 승리 기원</h1>
+<h3>오늘은 제발 좀 이기자...</h3>
+
+<!-- LocalDate를 yyyy-MM-dd 포맷으로 번경 -->
+<p th:text="${#temporals.format(today, 'yyyy-MM-dd')}"></p>
+
+<div th:each="player : ${players}">
+    <h4 th:text="${player.id}"></h4>
+    <p th:text="|등번호 : ${player.uniformNum}|"></p>
+    <p th:text="|이름 : ${player.name}|"></p>
+    <p th:text="|나이 : ${player.age}|"></p>
+    <p>포지션</p>
+    <ul th:each="position : ${player.position}">
+        <li th:text="${position}"></li>
+    </ul>
+
+    <!-- 해당 등번호 블로그 글을 보러 이동 (작성 안했으니 안보이는게 정상) -->
+    <a th:href="@{/api/articles/{id}(id=${player.uniformNum})}">글보기</a>
+    <br>
+</div>
+</body>
+</html>
